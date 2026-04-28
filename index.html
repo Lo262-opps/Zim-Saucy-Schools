@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zim_Saucy_Schools</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0b0b0b;
+  color: white;
+}
+
+/* NAV */
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  background: #111;
+  position: sticky;
+  top: 0;
+}
+
+nav h1 {
+  color: #00ff99;
+  font-size: 18px;
+}
+
+nav a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 100px 20px;
+  background: linear-gradient(120deg, #00ff99, #0066ff);
+}
+
+.hero h2 {
+  font-size: 40px;
+}
+
+.hero p {
+  font-size: 18px;
+  margin: 10px 0 20px;
+}
+
+.btn {
+  padding: 12px 20px;
+  margin: 5px;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.btn-primary {
+  background: black;
+  color: white;
+}
+
+.btn-secondary {
+  background: white;
+  color: black;
+}
+
+/* SECTIONS */
+.section {
+  padding: 60px 40px;
+}
+
+.section h3 {
+  color: #00ff99;
+  margin-bottom: 20px;
+}
+
+/* CARDS */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #1a1a1a;
+  padding: 20px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  background: #222;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 30px;
+  background: #111;
+  margin-top: 40px;
+  font-size: 14px;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <h1>Zim_Saucy_Schools</h1>
+  <div>
+    <a href="#">Home</a>
+    <a href="#">Schools</a>
+    <a href="#">News</a>
+    <a href="#">Gallery</a>
+    <a href="#">Contact</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <h2>Celebrating School Life Across Zimbabwe</h2>
+  <p>A digital platform showcasing talent, culture, and stories from schools nationwide.</p>
+  <button class="btn btn-primary">View Schools</button>
+  <button class="btn btn-secondary">Follow Instagram</button>
+</section>
+
+<section class="section">
+  <h3>Featured Schools</h3>
+  <div class="grid">
+    <div class="card">St George’s College</div>
+    <div class="card">Prince Edward School</div>
+    <div class="card">Dominican Convent</div>
+    <div class="card">Petra High</div>
+  </div>
+</section>
+
+<section class="section">
+  <h3>Latest Updates</h3>
+  <div class="grid">
+    <div class="card">Sports Results Update</div>
+    <div class="card">School Events This Week</div>
+    <div class="card">Top Student Spotlight</div>
+  </div>
+</section>
+
+<section class="section">
+  <h3>Gallery</h3>
+  <div class="grid">
+    <div class="card">📸 School Life</div>
+    <div class="card">🎓 Graduation Moments</div>
+    <div class="card">🏆 Sports Day</div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Zim_Saucy_Schools | Powered by Youth. Built for Schools.</p>
+</footer>
+
+</body>
+</html>
