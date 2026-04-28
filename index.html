@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zim Saucy Schools</title>
+
+<style>
+body{
+margin:0;
+font-family:Segoe UI, sans-serif;
+background:#0b0ea8;
+color:white;
+text-align:center;
+}
+
+.container{
+padding:40px 20px;
+}
+
+.logo{
+width:180px;
+margin-bottom:15px;
+}
+
+h1{
+font-size:40px;
+margin:10px 0;
+}
+
+.tag{
+color:#ff7a00;
+margin-bottom:30px;
+}
+
+.btn{
+display:inline-block;
+padding:14px 26px;
+margin:8px;
+border-radius:8px;
+text-decoration:none;
+font-weight:bold;
+cursor:pointer;
+border:none;
+}
+
+.instagram{background:#ff7a00;color:white;}
+.whatsapp{background:#25D366;color:white;}
+.adminBtn{background:white;color:#0b0ea8;}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:15px;
+padding:30px;
+}
+
+.gallery img{
+width:100%;
+border-radius:10px;
+}
+
+.admin{
+display:none;
+background:white;
+color:black;
+padding:20px;
+margin:20px;
+border-radius:10px;
+}
+
+input{
+padding:10px;
+margin:10px;
+}
+
+footer{
+margin-top:40px;
+opacity:0.8;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<img src="logo.jpg" class="logo">
+
+<h1>Zim.saucy.schools</h1>
+<div class="tag">YOUR SCHOOLS GALLERY</div>
+
+<a href="https://instagram.com/zim.saucy.schools" class="btn instagram" target="_blank">
+Follow on Instagram
+</a>
+
+<a href="https://wa.me/27818733386" class="btn whatsapp" target="_blank">
+Contact on WhatsApp
+</a>
+
+<br>
+
+<button class="btn adminBtn" onclick="login()">Admin Login</button>
+
+</div>
+
+<!-- ADMIN PANEL -->
+<div class="admin" id="adminPanel">
+
+<h2>Upload School Image</h2>
+
+<input type="file" id="imageUpload">
+<br>
+<button class="btn instagram" onclick="upload()">Upload</button>
+
+</div>
+
+<!-- GALLERY -->
+<div class="gallery" id="gallery"></div>
+
+<footer>
+Powered by Loki & Christ Arts
+</footer>
+
+<script>
+
+let password = "zim123";
+
+function login(){
+let pass = prompt("Enter Admin Password");
+
+if(pass === password){
+document.getElementById("adminPanel").style.display="block";
+}else{
+alert("Wrong password");
+}
+}
+
+function upload(){
+let file = document.getElementById("imageUpload").files[0];
+let reader = new FileReader();
+
+reader.onload = function(){
+let images = JSON.parse(localStorage.getItem("gallery")) || [];
+images.push(reader.result);
+localStorage.setItem("gallery", JSON.stringify(images));
+loadGallery();
+}
+
+reader.readAsDataURL(file);
+}
+
+function loadGallery(){
+let gallery = document.getElementById("gallery");
+gallery.innerHTML="";
+
+let images = JSON.parse(localStorage.getItem("gallery")) || [];
+
+images.forEach(img=>{
+let image = document.createElement("img");
+image.src = img;
+gallery.appendChild(image);
+});
+}
+
+loadGallery();
+
+</script>
+
+</body>
+</html>
